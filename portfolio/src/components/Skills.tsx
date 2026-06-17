@@ -3,76 +3,56 @@
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
 
-const skillCategories = [
-  {
-    title: "Programming",
-    skills: ["Python", "JavaScript", "TypeScript", "Bash", "C", "C++"],
-  },
-  {
-    title: "Tools & Cloud",
-    skills: ["Git", "Docker", "Kubernetes", "Vagrant", "Ansible"],
-  },
-  {
-    title: "Frontend",
-    skills: ["Next.js", "React", "Tailwind CSS"],
-  },
-  {
-    title: "Backend",
-    skills: ["Django", "NestJS", "Node.js", "PostgreSQL"],
-  },
-];
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.4, ease: "easeOut" },
-  },
-};
+const row1 = ["Node.js", "NestJS", "Django", "FastAPI", "Python", "TypeScript", "JavaScript", "React", "Next.js", "PostgreSQL", "Node.js", "NestJS", "Django", "FastAPI", "Python", "TypeScript", "JavaScript", "React", "Next.js", "PostgreSQL"];
+const row2 = ["AWS", "Docker", "Kubernetes", "K3s", "Ansible", "Vagrant", "LangChain", "RAG", "Git", "Linux", "AWS", "Docker", "Kubernetes", "K3s", "Ansible", "Vagrant", "LangChain", "RAG", "Git", "Linux"];
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 px-6">
-      <div className="max-w-4xl mx-auto">
-        <SectionHeading label="02 — Skills" title="Tech Stack" />
+    <section id="skills" className="py-24 overflow-hidden relative">
+      <div className="max-w-7xl mx-auto px-6 mb-12">
+        <SectionHeading label="04 — Skills" title="Tech Stack" />
+      </div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-8"
-        >
-          {skillCategories.map((category) => (
-            <motion.div key={category.title} variants={itemVariants}>
-              <h3 className="text-sm font-mono uppercase tracking-widest text-text-muted mb-4">
-                {category.title}
-              </h3>
-              <div className="flex flex-wrap gap-2.5">
-                {category.skills.map((skill) => (
-                  <motion.span
-                    key={skill}
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    className="px-3.5 py-1.5 rounded-lg text-sm font-medium bg-bg-card border border-border text-text-secondary hover:text-text-primary hover:border-border-hover hover:shadow-[0_0_12px_rgba(6,182,212,0.08)] transition-all duration-200 cursor-default"
-                  >
-                    {skill}
-                  </motion.span>
-                ))}
+      <div className="relative flex flex-col gap-6 opacity-90">
+        {/* Fading Edges */}
+        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#0B0F19] to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#0B0F19] to-transparent z-10 pointer-events-none" />
+
+        {/* Row 1 (Scrolling Left) */}
+        <div className="flex overflow-hidden">
+          <motion.div
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ ease: "linear", duration: 30, repeat: Infinity }}
+            className="flex gap-4 sm:gap-8 min-w-max"
+          >
+            {row1.map((skill, index) => (
+              <div
+                key={index}
+                className="px-6 py-3 rounded-xl border border-gray-800 bg-[#121212]/50 glass font-mono text-gray-300 text-lg hover:border-emerald-500/50 hover:text-emerald-400 transition-colors cursor-default"
+              >
+                {skill}
               </div>
-            </motion.div>
-          ))}
-        </motion.div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Row 2 (Scrolling Right) */}
+        <div className="flex overflow-hidden">
+          <motion.div
+            animate={{ x: ["-50%", "0%"] }}
+            transition={{ ease: "linear", duration: 35, repeat: Infinity }}
+            className="flex gap-4 sm:gap-8 min-w-max"
+          >
+            {row2.map((skill, index) => (
+              <div
+                key={index}
+                className="px-6 py-3 rounded-xl border border-gray-800 bg-[#121212]/50 glass font-mono text-gray-300 text-lg hover:border-emerald-500/50 hover:text-emerald-400 transition-colors cursor-default"
+              >
+                {skill}
+              </div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );

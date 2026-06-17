@@ -3,123 +3,96 @@
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
 
-const items = [
-  {
-    type: "Certification",
-    title: "eJPT — eLearnSecurity Junior Penetration Tester",
-    org: "INE (eLearnSecurity)",
-    description:
-      "Practical experience in network and host auditing, penetration testing, and web application security. Demonstrated hands-on ability to identify vulnerabilities and exploit weaknesses in real-world scenarios.",
-    icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-      </svg>
-    ),
-    accent: "cyan" as const,
-  },
-  {
-    type: "Education",
-    title: "1337 Coding School",
-    org: "42 Network",
-    description:
-      "Built projects using low-level programming (C/C++) and modern web technologies. Peer-to-peer learning methodology focused on problem-solving, collaboration, and building real-world applications.",
-    icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
-      </svg>
-    ),
-    accent: "violet" as const,
-  },
-  {
-    type: "Education",
-    title: "Physics Studies",
-    org: "University Hassan II",
-    description:
-      "Academic foundation in physics, developing strong analytical and mathematical thinking skills applicable to engineering and problem-solving.",
-    icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
-      </svg>
-    ),
-    accent: "violet" as const,
-  },
-];
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15 },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
-  },
-};
-
 export default function Certifications() {
   return (
-    <section id="education" className="py-24 px-6">
+    <section id="education" className="py-24 px-6 relative">
       <div className="max-w-4xl mx-auto">
-        <SectionHeading
-          label="04 — Credentials"
-          title="Certifications & Education"
-        />
+        <SectionHeading label="05 — Credentials" title="Education & Certifications" />
 
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="space-y-6"
+          transition={{ duration: 0.6 }}
+          className="rounded-xl overflow-hidden border border-gray-800 shadow-2xl bg-[#0a0a0a]"
         >
-          {items.map((item, i) => (
-            <motion.div
-              key={i}
-              variants={cardVariants}
-              whileHover={{ x: 4 }}
-              className="group p-6 rounded-xl bg-bg-card border border-border hover:border-border-hover transition-all duration-300"
-            >
-              <div className="flex gap-4">
-                {/* Icon */}
-                <div
-                  className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center ${
-                    item.accent === "cyan"
-                      ? "bg-accent-cyan/10 text-accent-cyan"
-                      : "bg-accent-violet/10 text-accent-violet"
-                  }`}
-                >
-                  {item.icon}
-                </div>
+          {/* Terminal Header */}
+          <div className="flex items-center gap-2 px-4 py-3 bg-[#111] border-b border-gray-800">
+            <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+            <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+            <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+            <div className="ml-4 text-xs font-mono text-gray-500">guest@amine-system: ~</div>
+          </div>
 
-                <div className="flex-1 min-w-0">
-                  <div className="flex flex-wrap items-center gap-2 mb-1">
-                    <span
-                      className={`text-xs font-mono uppercase tracking-wider ${
-                        item.accent === "cyan"
-                          ? "text-accent-cyan"
-                          : "text-accent-violet"
-                      }`}
-                    >
-                      {item.type}
-                    </span>
-                  </div>
-                  <h3 className="text-lg font-semibold text-text-primary mb-1 leading-snug">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-text-muted mb-3">{item.org}</p>
-                  <p className="text-sm text-text-secondary leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
+          {/* Terminal Body */}
+          <div className="p-6 font-mono text-sm md:text-base leading-relaxed text-gray-300">
+            {/* Command 1 */}
+            <div className="mb-6">
+              <div className="flex gap-2 text-emerald-400">
+                <span className="text-green-400">➜</span>
+                <span>~</span>
+                <span className="text-white">cat education.txt</span>
               </div>
-            </motion.div>
-          ))}
+              <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                className="mt-2 pl-4 border-l-2 border-gray-800"
+              >
+                <div className="text-emerald-300 font-bold">1337 Coding School (42 Network)</div>
+                <div className="text-gray-400">5th-year CS student</div>
+                <div className="mt-2 text-gray-500 text-sm">
+                  &gt; Mastered C/C++ in a rigorous peer-to-peer environment.<br/>
+                  &gt; Built complex system architecture, graphics, and networking projects from scratch.
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Command 2 */}
+            <div className="mb-6">
+              <div className="flex gap-2 text-emerald-400">
+                <span className="text-green-400">➜</span>
+                <span>~</span>
+                <span className="text-white">./check_certs.sh</span>
+              </div>
+              <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 1 }}
+                className="mt-2 pl-4 border-l-2 border-gray-800"
+              >
+                <a 
+                  href="https://certs.ine.com/80e7be99-392d-4939-94a6-3e0589079643#acc.l2QIurLY" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group block w-fit"
+                >
+                  <div className="text-emerald-300 font-bold flex items-center gap-2 group-hover:text-emerald-400 transition-colors">
+                    <span>[+] eJPT</span>
+                    <span className="px-2 py-0.5 text-[10px] bg-emerald-900/50 text-emerald-200 rounded group-hover:bg-emerald-800/50 transition-colors">VERIFIED</span>
+                    <svg className="w-3.5 h-3.5 ml-1 opacity-70 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </div>
+                  <div className="text-gray-400 group-hover:text-gray-300 transition-colors">eLearnSecurity Junior Penetration Tester</div>
+                </a>
+                <div className="mt-2 text-gray-500 text-sm">
+                  &gt; Practical experience in network and host auditing.<br/>
+                  &gt; Demonstrated hands-on ability to exploit vulnerabilities in real-world scenarios.
+                </div>
+              </motion.div>
+            </div>
+            
+            {/* Command 3 */}
+            <div className="mb-2">
+              <div className="flex gap-2 text-emerald-400">
+                <span className="text-green-400">➜</span>
+                <span>~</span>
+                <span className="text-white animate-pulse">_</span>
+              </div>
+            </div>
+
+          </div>
         </motion.div>
       </div>
     </section>
