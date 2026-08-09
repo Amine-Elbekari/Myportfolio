@@ -1,80 +1,260 @@
 "use client";
 
+import { useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
+import Lightbox from "./Lightbox";
+
+const INTERNSHIP_MOCKUPS = [
+  "/internship_mockups/mockup-1.jpg",
+  "/internship_mockups/mockup-2.png",
+  "/internship_mockups/mockup-3.jpg",
+  "/internship_mockups/mockup-4.jpg",
+];
+
+const experiences = [
+  {
+    role: "Fullstack Developer",
+    company: "Multimedia Center — UM6P",
+    location: "Ben Guerir, Morocco",
+    type: "INTERNSHIP",
+    duration: "Dec 2024 – Jun 2025 · 6 Months",
+    summary:
+      "Developed a comprehensive platform to manage multimedia service requests across the university's multimedia center — covering end-to-end workflows from request intake to delivery, with role-based access, an AI chatbot, and robust APIs.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "NestJS", "PostgreSQL", "TypeORM", "AI Chatbot"],
+    achievements: [
+      "Designed a role-based access system (Client, Worker, Manager) with granular permissions and secure JWT authentication.",
+      "Built a responsive Next.js/TypeScript frontend with a full component-driven architecture and smooth UX.",
+      "Architected RESTful APIs with NestJS and TypeORM, including entity relationships and migration pipelines.",
+      "Integrated an AI-powered chatbot to intelligently handle request intake and FAQ, reducing manual queries by ~40%.",
+      "Collaborated with the backend team on real-time notification delivery — coordinated on API contracts and WebSocket integration between frontend and backend layers.",
+    ],
+    mockupImages: INTERNSHIP_MOCKUPS,
+  },
+];
 
 export default function Experience() {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIdx, setLightboxIdx] = useState(0);
+  const [activeMockups, setActiveMockups] = useState<string[]>([]);
+
+  const openLightbox = useCallback((images: string[]) => {
+    setActiveMockups(images);
+    setLightboxIdx(0);
+    setLightboxOpen(true);
+  }, []);
+
   return (
-    <section id="experience" className="py-24 px-6 relative">
-      {/* Background Decor */}
-      <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none" />
+    <section id="experience" className="py-24 px-6 relative overflow-hidden">
+      {/* Background ambient blobs */}
+      <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-teal-500/8 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-emerald-500/8 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto relative z-10">
         <SectionHeading label="01 — Experience" title="Where I've Worked" />
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative mt-12"
-        >
-          {/* Glassmorphism Card */}
-          <div className="relative p-8 md:p-12 rounded-3xl border border-white/10 bg-[#121212]/40 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] overflow-hidden group">
-            
-            {/* Hover Gradient Overlay */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-gradient-to-br from-emerald-500/5 via-transparent to-emerald-500/5" />
-            
-            {/* Header */}
-            <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8">
-              <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono uppercase tracking-wider mb-4">
-                  Internship
-                </div>
-                <h3 className="text-3xl font-bold text-white mb-2">Fullstack Developer</h3>
-                <div className="text-lg font-medium gradient-text">Multimedia Center — UM6P</div>
-                <div className="text-gray-500 mt-1 font-mono text-sm">Morocco</div>
-              </div>
-              <div className="text-gray-400 font-mono">6 Months</div>
-            </div>
+        <div className="mt-14 flex flex-col gap-8">
+          {experiences.map((exp, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: idx * 0.1 }}
+            >
+              {/* Card */}
+              <div
+                className="relative rounded-2xl overflow-hidden group"
+                style={{
+                  background: "linear-gradient(135deg, #0d1117 0%, #111827 100%)",
+                  border: "1px solid rgba(255,255,255,0.07)",
+                  boxShadow: "0 8px 40px rgba(0,0,0,0.4)",
+                }}
+              >
+                {/* Neon-teal left border accent */}
+                <div
+                  className="absolute left-0 top-0 bottom-0 w-[3px] rounded-l-2xl"
+                  style={{
+                    background: "linear-gradient(180deg, #14b8a6 0%, #06b6d4 50%, #10b981 100%)",
+                    boxShadow: "0 0 16px rgba(20,184,166,0.6), 0 0 32px rgba(20,184,166,0.3)",
+                  }}
+                />
 
-            {/* Content */}
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <p className="text-gray-300 leading-relaxed mb-6">
-                  Developed a comprehensive platform to manage multimedia requests across the university's multimedia center.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {["Next.js", "TypeScript", "Tailwind CSS", "NestJS", "PostgreSQL", "TypeORM", "AI Chatbot"].map((tech) => (
+                {/* Hover glow overlay */}
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
+                  style={{
+                    background:
+                      "radial-gradient(ellipse at 20% 50%, rgba(20,184,166,0.06) 0%, transparent 60%)",
+                  }}
+                />
+
+                {/* Top meta bar */}
+                <div className="flex items-center justify-between px-8 pt-6 pb-0">
+                  {/* INTERNSHIP badge */}
+                  <div
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-widest"
+                    style={{
+                      background: "rgba(20,184,166,0.12)",
+                      border: "1px solid rgba(20,184,166,0.35)",
+                      color: "#5eead4",
+                      boxShadow: "0 0 8px rgba(20,184,166,0.2)",
+                    }}
+                  >
                     <span
-                      key={tech}
-                      className="px-3 py-1 rounded-lg text-xs font-mono bg-white/5 border border-white/10 text-gray-300 hover:bg-white/10 transition-colors cursor-default"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                      className="w-1.5 h-1.5 rounded-full animate-pulse"
+                      style={{ background: "#14b8a6", boxShadow: "0 0 6px #14b8a6" }}
+                    />
+                    {exp.type}
+                  </div>
+
+                  {/* Duration */}
+                  <div className="font-mono text-xs text-gray-500 tracking-wide">{exp.duration}</div>
+                </div>
+
+                {/* Main two-column body */}
+                <div className="grid md:grid-cols-2 gap-8 px-8 pt-6 pb-8">
+                  {/* ── LEFT COLUMN ── */}
+                  <div className="flex flex-col gap-5">
+                    {/* Role & company */}
+                    <div>
+                      <h3 className="text-2xl font-bold text-white leading-snug mb-1">{exp.role}</h3>
+                      <div
+                        className="text-base font-semibold"
+                        style={{
+                          background: "linear-gradient(90deg,#14b8a6,#06b6d4)",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                        }}
+                      >
+                        {exp.company}
+                      </div>
+                      <div className="flex items-center gap-1.5 mt-1 text-gray-500 text-xs font-mono">
+                        <svg
+                          className="w-3 h-3"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                          />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                          />
+                        </svg>
+                        {exp.location}
+                      </div>
+                    </div>
+
+                    {/* Summary paragraph */}
+                    <p className="text-gray-400 text-sm leading-relaxed">{exp.summary}</p>
+
+                    {/* Tech stack pills */}
+                    <div>
+                      <div className="text-[10px] font-mono text-gray-600 uppercase tracking-widest mb-2">
+                        Tech Stack
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.tech.map((t) => (
+                          <span
+                            key={t}
+                            className="px-2.5 py-1 rounded-md text-[11px] font-mono transition-all duration-200 cursor-default"
+                            style={{
+                              background: "rgba(20,184,166,0.08)",
+                              border: "1px solid rgba(20,184,166,0.2)",
+                              color: "#94d5ce",
+                            }}
+                          >
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* ── RIGHT COLUMN ── */}
+                  <div className="flex flex-col">
+                    <div className="text-[10px] font-mono text-gray-600 uppercase tracking-widest mb-4">
+                      Key Achievements
+                    </div>
+                    <ul className="space-y-3 flex-1">
+                      {exp.achievements.map((item, i) => (
+                        <motion.li
+                          key={i}
+                          initial={{ opacity: 0, x: 20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: 0.3 + i * 0.1, duration: 0.5 }}
+                          className="flex gap-3 text-gray-300 text-sm leading-relaxed"
+                        >
+                          <span
+                            className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full"
+                            style={{
+                              background: "linear-gradient(135deg,#14b8a6,#06b6d4)",
+                              boxShadow: "0 0 8px rgba(20,184,166,0.7)",
+                            }}
+                          />
+                          {item}
+                        </motion.li>
+                      ))}
+                    </ul>
+
+                    {/* View product button */}
+                    {exp.mockupImages.length > 0 && (
+                      <motion.button
+                        whileHover={{ scale: 1.03 }}
+                        whileTap={{ scale: 0.98 }}
+                        onClick={() => openLightbox(exp.mockupImages)}
+                        className="mt-6 self-start inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-mono font-medium transition-all duration-300 cursor-pointer"
+                        style={{
+                          background: "linear-gradient(135deg, rgba(20,184,166,0.15), rgba(6,182,212,0.1))",
+                          border: "1px solid rgba(20,184,166,0.3)",
+                          color: "#5eead4",
+                          boxShadow: "0 0 16px rgba(20,184,166,0.15)",
+                        }}
+                      >
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                          />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                          />
+                        </svg>
+                        View product →
+                      </motion.button>
+                    )}
+                  </div>
                 </div>
               </div>
-
-              <ul className="space-y-4">
-                {[
-                  "Designed a role-based access system (Client, Worker, Manager) with granular permissions.",
-                  "Built the frontend using Next.js, TypeScript, and Tailwind CSS with a responsive, component-driven architecture.",
-                  "Architected the backend with NestJS, PostgreSQL, and TypeORM for robust data management and API design.",
-                  "Implemented user accounts with secure authentication and an AI-powered chatbot for intelligent request handling.",
-                ].map((detail, i) => (
-                  <li key={i} className="flex gap-4 text-gray-400 leading-relaxed">
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)] shrink-0" />
-                    {detail}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-          </div>
-        </motion.div>
+            </motion.div>
+          ))}
+        </div>
       </div>
+
+      {/* Shared Lightbox */}
+      <Lightbox
+        images={activeMockups}
+        currentIndex={lightboxIdx}
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        onPrev={() => setLightboxIdx((p) => (p - 1 + activeMockups.length) % activeMockups.length)}
+        onNext={() => setLightboxIdx((p) => (p + 1) % activeMockups.length)}
+        disclaimer="UI designed by UM6P design team · Frontend implementation by Amine El Bekari"
+      />
     </section>
   );
 }
