@@ -6,10 +6,10 @@ import SectionHeading from "./SectionHeading";
 import Lightbox from "./Lightbox";
 
 const INTERNSHIP_MOCKUPS = [
-  "/internship_mockups/mockup-1.jpg",
-  "/internship_mockups/mockup-2.png",
-  "/internship_mockups/mockup-3.jpg",
-  "/internship_mockups/mockup-4.jpg",
+  "/Myportfolio/internship_mockups/mockup-1.jpg",
+  "/Myportfolio/internship_mockups/mockup-2.png",
+  "/Myportfolio/internship_mockups/mockup-3.jpg",
+  "/Myportfolio/internship_mockups/mockup-4.jpg",
 ];
 
 const experiences = [

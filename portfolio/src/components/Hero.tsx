@@ -112,7 +112,7 @@ export default function Hero() {
                 <div className="absolute -right-12 -top-12 w-64 h-64 bg-emerald-500/20 blur-[80px] z-0 pointer-events-none" />
                 
                 <img 
-                  src="/amine_p1.jpeg" 
+                  src="/Myportfolio/amine_p1.jpeg" 
                   alt="Amine El Bekari"
                   className="absolute inset-0 w-full h-full object-cover z-10 transition-transform duration-700 group-hover:scale-105"
                 />
