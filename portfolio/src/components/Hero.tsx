@@ -97,7 +97,7 @@ export default function Hero() {
                     GitHub
                   </a>
                   <a
-                    href="/Myportfolio/Amine_El_Bekari_Junior.pdf"
+                    href="/Myportfolio/Amine_El_Bekari_CV.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-8 py-4 border border-gray-700 hover:border-emerald-500/60 hover:bg-emerald-500/5 rounded-none text-gray-300 hover:text-emerald-400 font-mono text-sm uppercase tracking-widest transition-all flex items-center gap-3"
