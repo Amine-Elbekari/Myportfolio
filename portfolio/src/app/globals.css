@@ -15,9 +15,8 @@
   --font-mono: var(--font-jetbrains);
 }
 
-/* Smooth scrolling */
 html {
-  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
