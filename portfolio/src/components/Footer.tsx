@@ -37,7 +37,9 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="mailto:amineelbekari8@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=amineelbekari8@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 rounded-lg bg-bg-card border border-border flex items-center justify-center text-text-secondary hover:text-text-primary hover:border-border-hover transition-all duration-200"
               aria-label="Email"
             >

@@ -1,5 +1,16 @@
 [
   {
+    "id": "darkly",
+    "title": "Darkly",
+    "category": "Cyber Security",
+    "description": "A cybersecurity project exploring vulnerabilities and exploits.",
+    "tags": ["Security", "Web", "Vulnerabilities"],
+    "codeSnippet": [],
+    "codeFilename": "",
+    "githubUrl": "https://github.com/Amine-Elbekari/darkly",
+    "mockupImages": []
+  },
+  {
     "id": "booking-system",
     "title": "Scalable Booking System",
     "category": "Web",
@@ -24,7 +35,7 @@
       { "t": "plain", "v": "(slot);\n}" }
     ],
     "codeFilename": "main.ts",
-    "githubUrl": "",
+    "githubUrl": "https://github.com/Amine-Elbekari/Booking-Platform",
     "mockupImages": []
   },
   {
@@ -53,7 +64,7 @@
       { "t": "plain", "v": ": qs})" }
     ],
     "codeFilename": "views.py",
-    "githubUrl": "",
+    "githubUrl": "https://github.com/Amine-Elbekari/Piscine-Django",
     "mockupImages": []
   },
   {
@@ -87,7 +98,7 @@
       { "t": "plain", "v": "().splitlines()" }
     ],
     "codeFilename": "exploit.py",
-    "githubUrl": "",
+    "githubUrl": "https://github.com/Amine-Elbekari/boot2root",
     "mockupImages": []
   },
   {
@@ -114,7 +125,18 @@
       { "t": "str", "v": "\"dev\"" }
     ],
     "codeFilename": "argocd-app.yaml",
-    "githubUrl": "",
+    "githubUrl": "https://github.com/Amine-Elbekari/Inception_of_things",
+    "mockupImages": []
+  },
+  {
+    "id": "cloud-1",
+    "title": "Cloud 1",
+    "category": "DevOps / Cloud",
+    "description": "A project focused on cloud infrastructure and deployment.",
+    "tags": ["Cloud", "DevOps", "Infrastructure"],
+    "codeSnippet": [],
+    "codeFilename": "",
+    "githubUrl": "https://github.com/Amine-Elbekari/Cloud-1",
     "mockupImages": []
   }
 ]
