@@ -177,7 +177,7 @@ export default function Projects() {
       </div>
 
       {/* ── Mobile fallback ── */}
-      <div className="md:hidden flex flex-col gap-12 px-6 pb-24 items-center overflow-hidden">
+      <div className="md:hidden flex flex-col gap-8 px-4 md:px-6 pb-16 md:pb-24 items-center overflow-hidden w-full">
         <AnimatePresence mode="popLayout">
           {filtered.length === 0 ? (
             <motion.p

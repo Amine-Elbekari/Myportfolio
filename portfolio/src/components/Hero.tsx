@@ -66,7 +66,7 @@ export default function Hero() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
-                className="text-[4rem] sm:text-[5.5rem] md:text-[6.5rem] lg:text-[7.5rem] font-black leading-[0.9] tracking-tighter text-white uppercase"
+                className="text-5xl sm:text-[5.5rem] md:text-[6.5rem] lg:text-[7.5rem] font-black leading-[0.9] tracking-tighter text-white uppercase"
               >
                 Fullstack <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-br from-emerald-400 via-emerald-500 to-cyan-500">
@@ -80,9 +80,9 @@ export default function Hero() {
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
-                className="mt-8 max-w-2xl"
+                className="mt-6 md:mt-8 max-w-2xl"
               >
-                <p className="text-gray-400 text-lg md:text-xl lg:text-2xl font-light leading-relaxed">
+                <p className="text-gray-400 text-base md:text-xl lg:text-2xl font-light leading-relaxed">
                   Architecting scalable systems from Kubernetes and Cloud Infrastructure to AI integrations (RAG/LangChain) and dynamic frontends.
                 </p>
                 
@@ -105,7 +105,7 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.7, duration: 0.8 }}
-              className="shrink-0 w-full max-w-[320px] lg:max-w-[400px]"
+              className="shrink-0 w-full max-w-[220px] sm:max-w-[320px] lg:max-w-[400px] mx-auto lg:mx-0"
             >
               <div className="group relative rounded-3xl overflow-hidden aspect-[3/4]">
                 {/* Glowing orb behind to provide some ambient light, but NO border on the image container */}

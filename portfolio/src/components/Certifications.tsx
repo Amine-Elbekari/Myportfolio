@@ -5,7 +5,7 @@ import SectionHeading from "./SectionHeading";
 
 export default function Certifications() {
   return (
-    <section id="education" className="py-24 px-6 relative">
+    <section id="education" className="py-16 md:py-24 px-4 md:px-6 relative">
       <div className="max-w-4xl mx-auto">
         <SectionHeading label="05 — Credentials" title="Education & Certifications" />
 
@@ -25,7 +25,7 @@ export default function Certifications() {
           </div>
 
           {/* Terminal Body */}
-          <div className="p-6 font-mono text-sm md:text-base leading-relaxed text-gray-300">
+          <div className="p-4 md:p-6 font-mono text-xs md:text-base leading-relaxed text-gray-300">
             {/* Command 1 */}
             <div className="mb-6">
               <div className="flex gap-2 text-emerald-400">

@@ -45,7 +45,7 @@ export default function Experience() {
   }, []);
 
   return (
-    <section id="experience" className="py-24 px-6 relative overflow-hidden">
+    <section id="experience" className="py-16 md:py-24 px-4 md:px-6 relative overflow-hidden">
       {/* Background ambient blobs */}
       <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-teal-500/8 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-emerald-500/8 rounded-full blur-[100px] pointer-events-none" />
@@ -90,7 +90,7 @@ export default function Experience() {
                 />
 
                 {/* Top meta bar */}
-                <div className="flex items-center justify-between px-8 pt-6 pb-0">
+                <div className="flex items-center justify-between px-5 md:px-8 pt-5 md:pt-6 pb-0">
                   {/* INTERNSHIP badge */}
                   <div
                     className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-widest"
@@ -113,7 +113,7 @@ export default function Experience() {
                 </div>
 
                 {/* Main two-column body */}
-                <div className="grid md:grid-cols-2 gap-8 px-8 pt-6 pb-8">
+                <div className="grid md:grid-cols-2 gap-6 md:gap-8 px-5 md:px-8 pt-5 md:pt-6 pb-6 md:pb-8">
                   {/* ── LEFT COLUMN ── */}
                   <div className="flex flex-col gap-5">
                     {/* Role & company */}

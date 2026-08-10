@@ -8,8 +8,8 @@ const row2 = ["AWS", "Docker", "Kubernetes", "K3s", "Ansible", "Vagrant", "LangC
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 overflow-hidden relative">
-      <div className="max-w-7xl mx-auto px-6 mb-12">
+    <section id="skills" className="py-16 md:py-24 overflow-hidden relative">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 mb-8 md:mb-12">
         <SectionHeading label="04 — Skills" title="Tech Stack" />
       </div>
 
@@ -23,12 +23,12 @@ export default function Skills() {
           <motion.div
             animate={{ x: ["0%", "-50%"] }}
             transition={{ ease: "linear", duration: 30, repeat: Infinity }}
-            className="flex gap-4 sm:gap-8 min-w-max"
+            className="flex gap-3 sm:gap-8 min-w-max"
           >
             {row1.map((skill, index) => (
               <div
                 key={index}
-                className="px-6 py-3 rounded-xl border border-gray-800 bg-[#121212]/50 glass font-mono text-gray-300 text-lg hover:border-emerald-500/50 hover:text-emerald-400 transition-colors cursor-default"
+                className="px-4 md:px-6 py-2 md:py-3 rounded-xl border border-gray-800 bg-[#121212]/50 glass font-mono text-gray-300 text-sm md:text-lg hover:border-emerald-500/50 hover:text-emerald-400 transition-colors cursor-default"
               >
                 {skill}
               </div>
@@ -41,12 +41,12 @@ export default function Skills() {
           <motion.div
             animate={{ x: ["-50%", "0%"] }}
             transition={{ ease: "linear", duration: 35, repeat: Infinity }}
-            className="flex gap-4 sm:gap-8 min-w-max"
+            className="flex gap-3 sm:gap-8 min-w-max"
           >
             {row2.map((skill, index) => (
               <div
                 key={index}
-                className="px-6 py-3 rounded-xl border border-gray-800 bg-[#121212]/50 glass font-mono text-gray-300 text-lg hover:border-emerald-500/50 hover:text-emerald-400 transition-colors cursor-default"
+                className="px-4 md:px-6 py-2 md:py-3 rounded-xl border border-gray-800 bg-[#121212]/50 glass font-mono text-gray-300 text-sm md:text-lg hover:border-emerald-500/50 hover:text-emerald-400 transition-colors cursor-default"
               >
                 {skill}
               </div>

@@ -78,7 +78,7 @@ function CodeVisual({
       </div>
 
       {/* Code body */}
-      <div className="p-4 overflow-hidden max-h-[160px]">
+      <div className="p-4 overflow-hidden max-h-[80px] sm:max-h-[160px]">
         <pre className="whitespace-pre-wrap break-all">
           {tokens.map((tok, i) => (
             <motion.span
@@ -161,7 +161,7 @@ export default function ProjectCard({
       {/* Card wrapper — visible immediately, no whileInView opacity trap */}
       <motion.div
         initial={{ opacity: 1, y: 0, scale: 1 }}
-        className="w-[88vw] sm:w-[420px] shrink-0"
+        className="w-full sm:w-[420px] shrink-0"
         style={{ perspective: "1200px" }}
       >
         <motion.div
@@ -197,12 +197,12 @@ export default function ProjectCard({
             }}
           />
 
-          <div className="p-7 flex flex-col gap-5 flex-1" style={{ transform: "translateZ(0)" }}>
+          <div className="p-5 sm:p-7 flex flex-col gap-4 sm:gap-5 flex-1" style={{ transform: "translateZ(0)" }}>
             {/* ── Large project number ── */}
             <div
               className="font-mono font-black leading-none select-none"
               style={{
-                fontSize: "clamp(3rem,8vw,4.5rem)",
+                fontSize: "clamp(2.5rem,8vw,4.5rem)",
                 background: `linear-gradient(135deg, ${accent.from}60, ${accent.to}20)`,
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
@@ -232,7 +232,7 @@ export default function ProjectCard({
 
           {/* ── Tech pills (bottom) ── */}
           <div
-            className="px-7 pb-6 flex flex-wrap gap-2"
+            className="px-5 sm:px-7 pb-5 sm:pb-6 flex flex-wrap gap-2"
             style={{
               transform: "translateZ(25px)",
               borderTop: "1px solid rgba(255,255,255,0.05)",
@@ -260,7 +260,7 @@ export default function ProjectCard({
               background: "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0.95) 100%)",
             }}
           >
-            <div className="px-7 pt-14 pb-6 flex items-end justify-between gap-3">
+            <div className="px-5 sm:px-7 pt-10 sm:pt-14 pb-5 sm:pb-6 flex items-end justify-between gap-3">
               <p className="text-gray-300 text-xs leading-snug line-clamp-1 flex-1">{description}</p>
               <div className="flex gap-2 shrink-0">
                 {/* GitHub button — active link or disabled "Private repo" */}
