@@ -33,30 +33,26 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
         <a
           href="#"
-          className="flex items-center gap-0 hover:opacity-80 transition-opacity"
+          className="group flex items-center gap-0 hover:opacity-90 transition-all duration-300"
           aria-label="Home"
         >
-          <svg width="38" height="28" viewBox="0 0 38 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            {/* Left bracket */}
-            <path d="M4 14L10 4" stroke="url(#logo-grad)" strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
-            <path d="M4 14L10 24" stroke="url(#logo-grad)" strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
-            {/* Letter A */}
-            <path d="M12 22L17 6L22 22" stroke="url(#logo-grad)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M14 17H20" stroke="url(#logo-grad)" strokeWidth="1.5" strokeLinecap="round" />
-            {/* Letter E */}
-            <path d="M24 6H31M24 14H29M24 22H31M24 6V22" stroke="url(#logo-grad)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            {/* Right slash */}
-            <path d="M33 22L36 6" stroke="url(#logo-grad)" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
-            <defs>
-              <linearGradient id="logo-grad" x1="0" y1="0" x2="38" y2="28" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#14b8a6" />
-                <stop offset="1" stopColor="#06b6d4" />
-              </linearGradient>
-            </defs>
-          </svg>
+          <span className="font-mono text-lg tracking-tight select-none flex items-center">
+            <span className="text-emerald-500/50 group-hover:text-emerald-400/70 transition-colors duration-300">&lt;</span>
+            <span
+              className="font-bold text-xl mx-[1px]"
+              style={{
+                background: "linear-gradient(135deg, #14b8a6, #06b6d4)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              AE
+            </span>
+            <span className="text-emerald-500/30 group-hover:text-emerald-400/50 transition-colors duration-300 mx-[1px]">/</span>
+            <span className="text-emerald-500/50 group-hover:text-emerald-400/70 transition-colors duration-300">&gt;</span>
+          </span>
         </a>
 
         {/* Desktop nav */}
