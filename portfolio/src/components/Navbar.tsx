@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
+  { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
@@ -35,9 +36,27 @@ export default function Navbar() {
         {/* Logo */}
         <a
           href="#"
-          className="text-lg font-semibold tracking-tight text-text-primary hover:opacity-80 transition-opacity"
+          className="flex items-center gap-0 hover:opacity-80 transition-opacity"
+          aria-label="Home"
         >
-          AE<span className="gradient-text">.</span>
+          <svg width="38" height="28" viewBox="0 0 38 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* Left bracket */}
+            <path d="M4 14L10 4" stroke="url(#logo-grad)" strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
+            <path d="M4 14L10 24" stroke="url(#logo-grad)" strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
+            {/* Letter A */}
+            <path d="M12 22L17 6L22 22" stroke="url(#logo-grad)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M14 17H20" stroke="url(#logo-grad)" strokeWidth="1.5" strokeLinecap="round" />
+            {/* Letter E */}
+            <path d="M24 6H31M24 14H29M24 22H31M24 6V22" stroke="url(#logo-grad)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            {/* Right slash */}
+            <path d="M33 22L36 6" stroke="url(#logo-grad)" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
+            <defs>
+              <linearGradient id="logo-grad" x1="0" y1="0" x2="38" y2="28" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#14b8a6" />
+                <stop offset="1" stopColor="#06b6d4" />
+              </linearGradient>
+            </defs>
+          </svg>
         </a>
 
         {/* Desktop nav */}

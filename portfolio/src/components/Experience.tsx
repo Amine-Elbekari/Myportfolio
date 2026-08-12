@@ -15,19 +15,19 @@ const INTERNSHIP_MOCKUPS = [
 const experiences = [
   {
     role: "Fullstack Developer",
-    company: "Multimedia Center — UM6P",
+    company: "Multimedia Center, UM6P",
     location: "Rabat, Morocco",
     type: "INTERNSHIP",
     duration: "Dec 2024 to Jun 2025 · 6 Months",
     summary:
-      "Developed a complete platform to manage service requests for the university multimedia center, covering the entire workflow from initial request to final delivery with distinct user permissions and a smart chat assistant.",
+      "I built a full platform that manages service requests for the university multimedia center, taking each request from the moment it comes in all the way through to delivery. The system handles user permissions, automates common questions through a chat assistant, and keeps everyone in the loop with real time updates.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "NestJS", "PostgreSQL", "TypeORM", "AI Chatbot"],
     achievements: [
-      "Set up a secure login and permission system so clients, workers, and managers can safely access their specific tools.",
-      "Built a fast and responsive interface that provides a smooth experience for users on any device.",
-      "Designed the server logic and database structure to handle information reliably and efficiently.",
-      "Implemented a smart chat assistant that automatically answers common questions and processes new requests, reducing manual work by 40 percent.",
-      "Collaborated with team members to add instant live notifications so users always receive updates immediately.",
+      "I built a secure authentication and permissions layer from scratch, giving clients, workers, and managers each their own tailored access to the platform without compromising on safety.",
+      "I created the entire frontend in Next.js with TypeScript, focusing on making every interaction feel fast and intuitive regardless of screen size or device.",
+      "I designed the backend API architecture and database models, making sure the system could handle complex relationships between requests, users, and workflows without breaking a sweat.",
+      "I implemented a chat assistant that fields common questions and processes new service requests on its own, which ended up cutting manual work by about 40 percent.",
+      "I worked closely with my teammates to wire up live notifications using WebSockets, so users always know the moment something changes on their requests.",
     ],
     mockupImages: INTERNSHIP_MOCKUPS,
   },
@@ -51,7 +51,7 @@ export default function Experience() {
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-emerald-500/8 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto relative z-10">
-        <SectionHeading label="01 — Experience" title="Where I've Worked" />
+        <SectionHeading label="01 / Experience" title="Where I've Worked" />
 
         <div className="mt-14 flex flex-col gap-8">
           {experiences.map((exp, idx) => (

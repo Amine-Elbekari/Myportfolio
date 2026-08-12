@@ -10,7 +10,7 @@ export default function Skills() {
   return (
     <section id="skills" className="py-16 md:py-24 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 md:px-6 mb-8 md:mb-12">
-        <SectionHeading label="04 — Skills" title="Tech Stack" />
+        <SectionHeading label="04 / Skills" title="Tech Stack" />
       </div>
 
       <div className="relative flex flex-col gap-6 opacity-90">

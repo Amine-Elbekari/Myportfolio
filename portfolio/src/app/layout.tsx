@@ -15,7 +15,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Amine Elbekari — Full Stack Engineer",
+  title: "Amine Elbekari | Fullstack Engineer",
   description:
     "Full Stack Engineer focused on robust backend architecture, security, and cloud automation. Portfolio showcasing projects in Kubernetes, Cloud, and AI.",
   keywords: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Amine Elbekari" }],
   openGraph: {
-    title: "Amine Elbekari — Full Stack Engineer",
+    title: "Amine Elbekari | Fullstack Engineer",
     description:
       "Full Stack Engineer focused on robust backend architecture, security, and cloud automation.",
     type: "website",

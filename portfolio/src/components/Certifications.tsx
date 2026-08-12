@@ -7,7 +7,7 @@ export default function Certifications() {
   return (
     <section id="education" className="py-16 md:py-24 px-4 md:px-6 relative">
       <div className="max-w-4xl mx-auto">
-        <SectionHeading label="05 — Credentials" title="Education & Certifications" />
+        <SectionHeading label="05 / Credentials" title="Education & Certifications" />
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -40,10 +40,14 @@ export default function Certifications() {
                 className="mt-2 pl-4 border-l-2 border-gray-800"
               >
                 <div className="text-emerald-300 font-bold">1337 Coding School (42 Network)</div>
-                <div className="text-gray-400">5th-year CS student</div>
+                <div className="text-gray-400">Fifth year Computer Science student</div>
                 <div className="mt-2 text-gray-500 text-sm">
-                  &gt; Mastered C/C++ in a rigorous peer-to-peer environment.<br/>
-                  &gt; Built complex system architecture, graphics, and networking projects from scratch.
+                  &gt; During my time here I built a strong foundation in low level<br/>
+                  &gt; programming through a rigorous peer to peer learning model,<br/>
+                  &gt; while also working on complex system architecture, graphics,<br/>
+                  &gt; and networking projects built entirely from scratch. The experience<br/>
+                  &gt; shaped how I approach problem solving today, valuing curiosity,<br/>
+                  &gt; independence, and hands on learning over traditional lectures.
                 </div>
               </motion.div>
             </div>
@@ -77,8 +81,8 @@ export default function Certifications() {
                   <div className="text-gray-400 group-hover:text-gray-300 transition-colors">eLearnSecurity Junior Penetration Tester</div>
                 </a>
                 <div className="mt-2 text-gray-500 text-sm">
-                  &gt; Practical experience in network and host auditing.<br/>
-                  &gt; Demonstrated hands-on ability to exploit vulnerabilities in real-world scenarios.
+                  &gt; Practical, hands on experience in network and host auditing.<br/>
+                  &gt; Tested and exploited real world vulnerabilities in controlled scenarios.
                 </div>
               </motion.div>
             </div>

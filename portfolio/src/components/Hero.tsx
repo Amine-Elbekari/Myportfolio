@@ -70,9 +70,8 @@ export default function Hero() {
               >
                 Fullstack <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-br from-emerald-400 via-emerald-500 to-cyan-500">
-                  Software
-                </span> <br />
-                Engineer
+                  Engineer
+                </span>
               </motion.h1>
               
               {/* Serious Engineering Subtext */}
@@ -83,7 +82,7 @@ export default function Hero() {
                 className="mt-6 md:mt-8 max-w-2xl"
               >
                 <p className="text-gray-400 text-base md:text-xl lg:text-2xl font-light leading-relaxed">
-                  Architecting scalable systems from Kubernetes and Cloud Infrastructure to AI integrations (RAG/LangChain) and dynamic frontends.
+                  I build the systems people actually use, from clean backend logic to interfaces that feel effortless. I care about code that works well, scales gracefully, and makes life easier for the people who depend on it.
                 </p>
                 
                 <div className="flex flex-wrap gap-4 mt-8">

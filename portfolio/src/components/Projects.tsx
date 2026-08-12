@@ -84,12 +84,12 @@ export default function Projects() {
     [measureTrack, scrollX]
   );
 
-  const sectionHeight = `${Math.max(150, filtered.length * 100)}vh`;
+  const sectionHeight = `${Math.max(150, filtered.length * 70)}vh`;
 
   return (
     <section id="projects" className="bg-[#0B0F19] relative">
       <div className="max-w-7xl mx-auto px-6 pt-24 pb-8">
-        <SectionHeading label="03 — Projects" title="Featured Work" />
+        <SectionHeading label="03 / Projects" title="Featured Work" />
 
         {/* ── Filter tab bar ── */}
         <div className="mt-10 flex flex-wrap gap-1 sm:gap-0 relative">
@@ -142,7 +142,7 @@ export default function Projects() {
                   className="font-mono text-sm tracking-wider"
                   style={{ color: "rgba(255,255,255,0.25)" }}
                 >
-                  No projects in this category yet — check back soon.
+                  No projects in this category yet. Check back soon.
                 </p>
               </motion.div>
             ) : (
@@ -188,7 +188,7 @@ export default function Projects() {
               className="font-mono text-sm tracking-wider text-center py-16"
               style={{ color: "rgba(255,255,255,0.25)" }}
             >
-              No projects in this category yet — check back soon.
+              No projects in this category yet. Check back soon.
             </motion.p>
           ) : (
             filtered.map((project, i) => (

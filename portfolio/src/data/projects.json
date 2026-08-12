@@ -3,7 +3,7 @@
     "id": "darkly",
     "title": "Darkly",
     "category": "Security",
-    "description": "A cybersecurity project exploring vulnerabilities and exploits.",
+    "description": "A hands on cybersecurity project where I explored real web vulnerabilities and wrote scripts to exploit them in a controlled environment.",
     "tags": ["Security", "Web", "Vulnerabilities"],
     "codeSnippet": [
       { "t": "comment", "v": "# exploit_darkly.py — automated exploitation" },
@@ -38,7 +38,7 @@
     "id": "booking-system",
     "title": "Scalable Booking System",
     "category": "Web",
-    "description": "A highly resilient booking platform featuring advanced architecture. Built for high concurrency and robust data consistency.",
+    "description": "A booking platform I built to handle high traffic and concurrent reservations reliably, with a clean React frontend and a FastAPI backend backed by Redis locking.",
     "tags": ["React", "FastAPI", "PostgreSQL", "Docker", "Redis"],
     "codeSnippet": [
       { "t": "keyword", "v": "async " },
@@ -66,7 +66,7 @@
     "id": "django-piscine",
     "title": "42 Network Django Piscine",
     "category": "Web",
-    "description": "Intense backend web development challenges. Mastered Django ORM, authentication, real-time sockets, and secure API design.",
+    "description": "An intensive series of backend web challenges where I got deep into Django ORM, authentication flows, real time WebSockets, and secure API design.",
     "tags": ["Django", "Python", "WebSockets", "Vanilla JS"],
     "codeSnippet": [
       { "t": "comment", "v": "# views.py" },
@@ -95,7 +95,7 @@
     "id": "boot2root-ctf",
     "title": "Boot2Root CTF Solutions",
     "category": "Security",
-    "description": "Comprehensive penetration testing and security exploits. Demonstrating practical vulnerability assessment and privilege escalation.",
+    "description": "Capture the flag solutions where I practiced real penetration testing techniques, from vulnerability scanning to privilege escalation on live systems.",
     "tags": ["Security", "Kali Linux", "Bash", "Python", "Networking"],
     "codeSnippet": [
       { "t": "comment", "v": "# exploit.py — priv-esc PoC" },
@@ -129,7 +129,7 @@
     "id": "inception-of-things",
     "title": "Inception of Things",
     "category": "DevOps / Cloud",
-    "description": "A Minimalist Introduction to Kubernetes Orchestration & GitOps.",
+    "description": "A practical introduction to Kubernetes orchestration and GitOps, deploying clusters with K3s, K3D, and Argo CD.",
     "tags": ["K3s", "K3D", "Vagrant", "Argo CD", "Docker"],
     "codeSnippet": [
       { "t": "comment", "v": "# argocd-app.yaml — GitOps Sync" },
@@ -156,7 +156,7 @@
     "id": "cloud-1",
     "title": "Cloud 1",
     "category": "DevOps / Cloud",
-    "description": "A project focused on cloud infrastructure and deployment.",
+    "description": "A cloud infrastructure project where I set up automated deployments with Docker Compose, Nginx reverse proxying, and PostgreSQL.",
     "tags": ["Cloud", "DevOps", "Infrastructure"],
     "codeSnippet": [
       { "t": "comment", "v": "# docker-compose.yml" },
