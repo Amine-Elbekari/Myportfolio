@@ -78,7 +78,7 @@ function CodeVisual({
       </div>
 
       {/* Code body */}
-      <div className="p-4 overflow-hidden max-h-[80px] sm:max-h-[160px]">
+      <div className="p-4 overflow-hidden h-[80px] sm:h-[160px]">
         <pre className="whitespace-pre-wrap break-all">
           {tokens.map((tok, i) => (
             <motion.span
@@ -161,7 +161,7 @@ export default function ProjectCard({
       {/* Card wrapper — visible immediately, no whileInView opacity trap */}
       <motion.div
         initial={{ opacity: 1, y: 0, scale: 1 }}
-        className="w-full sm:w-[420px] shrink-0"
+        className="w-full sm:w-[420px] shrink-0 self-stretch"
         style={{ perspective: "1200px" }}
       >
         <motion.div
@@ -176,16 +176,8 @@ export default function ProjectCard({
             border: "1px solid rgba(255,255,255,0.06)",
             boxShadow: "0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04)",
           }}
-          className="relative w-full rounded-2xl overflow-hidden cursor-pointer group flex flex-col"
+          className="relative w-full h-full rounded-2xl overflow-hidden cursor-pointer group flex flex-col"
         >
-          {/* ── Colored top accent bar ── */}
-          <div
-            className="w-full h-[3px] shrink-0"
-            style={{
-              background: `linear-gradient(90deg, ${accent.from}, ${accent.to})`,
-              boxShadow: `0 0 20px ${accent.glow}`,
-            }}
-          />
 
           {/* ── Background glow blob ── */}
           <div
@@ -223,7 +215,7 @@ export default function ProjectCard({
 
             {/* ── Description ── */}
             <p
-              className="text-gray-400 text-sm leading-relaxed"
+              className="text-gray-400 text-sm leading-relaxed line-clamp-3"
               style={{ transform: "translateZ(20px)" }}
             >
               {description}
@@ -232,7 +224,7 @@ export default function ProjectCard({
 
           {/* ── Tech pills (bottom) ── */}
           <div
-            className="px-5 sm:px-7 pb-5 sm:pb-6 flex flex-wrap gap-2"
+            className="mt-auto mb-6 px-5 sm:px-7 pt-4 flex flex-wrap gap-2"
             style={{
               transform: "translateZ(25px)",
               borderTop: "1px solid rgba(255,255,255,0.05)",

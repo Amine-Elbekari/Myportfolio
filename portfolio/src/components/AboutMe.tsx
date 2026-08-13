@@ -25,15 +25,6 @@ export default function AboutMe() {
             boxShadow: "0 8px 40px rgba(0,0,0,0.4)",
           }}
         >
-          {/* Accent top bar */}
-          <div
-            className="w-full h-[3px]"
-            style={{
-              background: "linear-gradient(90deg, #14b8a6, #06b6d4, #10b981)",
-              boxShadow: "0 0 16px rgba(20,184,166,0.4)",
-            }}
-          />
-
           <div className="p-6 md:p-10 flex flex-col gap-5">
             <motion.p
               initial={{ opacity: 0 }}

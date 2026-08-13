@@ -121,10 +121,10 @@ export default function Projects() {
         </div>
       </div>
 
-      {/* ── Desktop horizontal scroll ── */}
+      {/* Desktop horizontal scroll (lg and up only) */}
       <div
         ref={containerRef}
-        className="relative hidden md:block"
+        className="relative hidden lg:block"
         style={{ height: sectionHeight }}
       >
         <div className="sticky top-0 h-screen flex items-center overflow-hidden">
@@ -176,8 +176,8 @@ export default function Projects() {
         </div>
       </div>
 
-      {/* ── Mobile fallback ── */}
-      <div className="md:hidden flex flex-col gap-8 px-4 md:px-6 pb-16 md:pb-24 items-center overflow-hidden w-full">
+      {/* Mobile + Tablet fallback (below lg) */}
+      <div className="lg:hidden px-4 sm:px-6 pb-16 w-full">
         <AnimatePresence mode="popLayout">
           {filtered.length === 0 ? (
             <motion.p
@@ -191,27 +191,30 @@ export default function Projects() {
               No projects in this category yet. Check back soon.
             </motion.p>
           ) : (
-            filtered.map((project, i) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.35 }}
-              >
-                <ProjectCard
-                  id={project.id}
-                  index={i}
-                  title={project.title}
-                  description={project.description}
-                  tags={project.tags}
-                  codeSnippet={project.codeSnippet}
-                  codeFilename={project.codeFilename}
-                  githubUrl={project.githubUrl}
-                  mockupImages={project.mockupImages}
-                />
-              </motion.div>
-            ))
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-stretch">
+              {filtered.map((project, i) => (
+                <motion.div
+                  key={project.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.35, delay: i * 0.05 }}
+                  className="w-full h-full"
+                >
+                  <ProjectCard
+                    id={project.id}
+                    index={i}
+                    title={project.title}
+                    description={project.description}
+                    tags={project.tags}
+                    codeSnippet={project.codeSnippet}
+                    codeFilename={project.codeFilename}
+                    githubUrl={project.githubUrl}
+                    mockupImages={project.mockupImages}
+                  />
+                </motion.div>
+              ))}
+            </div>
           )}
         </AnimatePresence>
       </div>

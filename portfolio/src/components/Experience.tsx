@@ -71,14 +71,7 @@ export default function Experience() {
                   boxShadow: "0 8px 40px rgba(0,0,0,0.4)",
                 }}
               >
-                {/* Neon-teal left border accent */}
-                <div
-                  className="absolute left-0 top-0 bottom-0 w-[3px] rounded-l-2xl"
-                  style={{
-                    background: "linear-gradient(180deg, #14b8a6 0%, #06b6d4 50%, #10b981 100%)",
-                    boxShadow: "0 0 16px rgba(20,184,166,0.6), 0 0 32px rgba(20,184,166,0.3)",
-                  }}
-                />
+
 
                 {/* Hover glow overlay */}
                 <div
@@ -253,7 +246,6 @@ export default function Experience() {
         onClose={() => setLightboxOpen(false)}
         onPrev={() => setLightboxIdx((p) => (p - 1 + activeMockups.length) % activeMockups.length)}
         onNext={() => setLightboxIdx((p) => (p + 1) % activeMockups.length)}
-        disclaimer="UI designed by UM6P design team · Frontend implementation by Amine El Bekari"
       />
     </section>
   );
