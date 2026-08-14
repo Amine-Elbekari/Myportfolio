@@ -161,7 +161,7 @@ export default function ProjectCard({
       {/* Card wrapper — visible immediately, no whileInView opacity trap */}
       <motion.div
         initial={{ opacity: 1, y: 0, scale: 1 }}
-        className="w-full self-stretch"
+        className="w-full sm:w-[420px] shrink-0 self-stretch"
         style={{ perspective: "1200px" }}
       >
         <motion.div
